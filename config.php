@@ -8,7 +8,7 @@
 		if($cache){
 			$content = $cache;
 		}else{
-			$content = file_get_contents('https://pokeapi.co/api/v2/'.$url);
+			$content = @file_get_contents('https://pokeapi.co/api/v2/'.$url);
 		}
 
 		if($content === false){
