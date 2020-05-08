@@ -14,6 +14,7 @@
 		if($content === false){
 			return false;
 		}else{
+			writeCache($url, $content);
 			return json_decode($content);
 		}
 	}
