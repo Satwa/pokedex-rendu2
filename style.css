@@ -7,6 +7,15 @@ body{
 	font-family: sans-serif;
 	background-color: var(--poke-blue);
 	font-family: 'Courier Prime', monospace;
+
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 h1{
@@ -24,11 +33,8 @@ h1{
 	padding: 20px 50px 30px;
 }
 .pokeImage{
-	display: block;
-	margin: 20px 0;
-	max-width: 180px;
-	position: relative;
-	left: -45px;
+	height: 80%;
+	width: auto;
 }
 .base-title{
 	font-size: 1.3rem;
@@ -37,14 +43,8 @@ h1{
 .stat{
 	font-weight: 700;
 }
-.poke-name-num{
-	display: inline-block;
-	float: left;
-	margin-left: 5px;
-}
 .size{
-	display: inline-block;
-	float: right;
+	align-self: flex-end;
 	margin-right: 5px;
 }
 .name{
@@ -70,10 +70,11 @@ h1{
 .imageContainer{
 	height: 300px;
 	background-color: var(--poke-grey);
-	white-space: nowrap;
 	border: 1px solid var(--poke-red);
 	color: #fff;
 	font-size: 1.2rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .pokemonListContainer{
@@ -89,23 +90,6 @@ h1{
 	color: var(--poke-blue);
 }
 
-button{
-	display: inline;
-	margin: 0;
-	background-color: #fff;
-	color: var(--poke-red);
-	border: 1px solid var(--poke-red);
-	position: relative;
-	left: 0px;
-	outline: none;
-	cursor: pointer;
-}
-button:hover{
-	border: 2px solid var(--poke-red);
-}
-button:active{
-	background-color: #f4f1f1;
-}
 .bigBtn{
 	height: 40px;
 	max-width: 120px;
@@ -142,77 +126,169 @@ tr:nth-child(even){
 	margin-left: 5px;
 	font-weight: 700;
 }
-.normal{
+
+
+.normal tr:nth-child(even), 
+.normal .titleBar{
 	background-color: #a8a878;
 }
-.grass{
+.grass tr:nth-child(even),
+.fire .titleBar{
 	background-color: #78c850;
 }
-.ground{
+.ground tr:nth-child(even),
+.ground .titleBar{
 	background-color: #e0c068;
 }
-.fighting{
+.fighting tr:nth-child(even),
+.fighting .titleBar{
 	background-color: #c03028;
 }
-.rock{
+.rock tr:nth-child(even),
+.rock .titleBar{
 	background-color: #b8a038;
 }
-.steel{
+.steel tr:nth-child(even),
+.steel .titleBar{
 	background-color: #b8b8d0;
 }
-.fire{
+.fire tr:nth-child(even),
+.fire .titleBar{
 	background-color: #f08030;
 }
-.electric{
+.electric tr:nth-child(even),
+.electric .titleBar{
 	background-color: #f8d030;
 }
-.flying{
+.flying tr:nth-child(even),
+.flying .titleBar{
 	background-color: #a890f0;
 }
-.psychic{
+.psychic tr:nth-child(even),
+.psychic .titleBar{
 	background-color: #f85888;
 }
-.bug{
+.bug tr:nth-child(even),
+.bug .titleBar{
 	background-color: #a8b820;
 }
-.dragon{
+.dragon tr:nth-child(even),
+.dragon .titleBar{
 	background-color: #7038f8;
 }
-.water{
+.water tr:nth-child(even),
+.water .titleBar{
 	background-color: #6890f0;
 }
-.ice{
+.ice tr:nth-child(even),
+.ice .titleBar{
 	background-color: #98d8d8;
 }
-.poison{
+.poison tr:nth-child(even),
+.poison .titleBar{
 	background-color: #a040a0;
 }
-.dark{
+.dark tr:nth-child(even),
+.dark .titleBar{
 	background-color: #705848;
 }
-.ghost{
+.ghost tr:nth-child(even),
+.ghost .titleBar{
 	background-color: #705898;
 }
-.fairy{
+.fairy tr:nth-child(even),
+.fairy .titleBar{
 	background-color: #ffaec9;
 }
-footer{
-	background-color: var(--poke-red);
-	text-align: center;
-	position: fixed;
-	left: 0px;
-	bottom: 0px;
-	height: 50px;
-	max-width: 100%;
-	color: #fff;
-}
 
-footer a{
-	color: #fff;
-	text-decoration: none;
-}
 
-footer a:hover{
-	color: var(--poke-yellow);
+.normal .imageContainer, 
+.normal td,
+.normal th{
+	border-color: #a8a878;
 }
-
+.grass td,
+.grass th,
+.fire .imageContainer{
+	border-color: #78c850;
+}
+.ground td,
+.ground th,
+.ground .imageContainer{
+	border-color: #e0c068;
+}
+.fighting td,
+.fighting th,
+.fighting .imageContainer{
+	border-color: #c03028;
+}
+.rock td,
+.rock th,
+.rock .imageContainer{
+	border-color: #b8a038;
+}
+.steel td,
+.steel th,
+.steel .imageContainer{
+	border-color: #b8b8d0;
+}
+.fire td,
+.fire th,
+.fire .imageContainer{
+	border-color: #f08030;
+}
+.electric td,
+.electric th,
+.electric .imageContainer{
+	border-color: #f8d030;
+}
+.flying td,
+.flying th,
+.flying .imageContainer{
+	border-color: #a890f0;
+}
+.psychic td,
+.psychic th,
+.psychic .imageContainer{
+	border-color: #f85888;
+}
+.bug td,
+.bug th,
+.bug .imageContainer{
+	border-color: #a8b820;
+}
+.dragon td,
+.dragon th,
+.dragon .imageContainer{
+	border-color: #7038f8;
+}
+.water td,
+.water th,
+.water .imageContainer{
+	border-color: #6890f0;
+}
+.ice td,
+.ice th,
+.ice .imageContainer{
+	border-color: #98d8d8;
+}
+.poison td,
+.poison th,
+.poison .imageContainer{
+	border-color: #a040a0;
+}
+.dark td,
+.dark th,
+.dark .imageContainer{
+	border-color: #705848;
+}
+.ghost td,
+.ghost th,
+.ghost .imageContainer{
+	border-color: #705898;
+}
+.fairy td,
+.fairy th,
+.fairy .imageContainer{
+	border-color: #ffaec9;
+}

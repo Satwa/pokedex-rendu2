@@ -28,30 +28,24 @@
 <body>
 	<h1>Pokedex</h1>
 
-	<div class="container">  <!-- TODO: Change to Flex + Center vertically to the page -->
-		<div class="titleBar">
+	<div class="container <?= $data->types[0]->type->name ?>">
+		<div class="titleBar <?= $data->types[0]->type->name ?>">
 			<label for="pokemon"><?= ucfirst(join(' ', explode('-', $data->name))); ?></label>
 		</div>
 		
 		<div class="pokeOutput">
 			<div>
 				<div class="imageContainer">
-					<div class="poke-name-num">
-						<span class="name poke-info"></span>
-						<span class="idNum poke-info"></span>
-					</div>
-				
 					<div class="size">
-						<span class="poke-info"><span class="weight"></span></span>
-						<span class="poke-info"><span class="height"></span></span>
+						<span class="pokeInfo"><span class="weight"><?= $data->weight ?></span></span>
+						<span class="pokeInfo"><span class="height"><?= $data->height ?></span></span>
 					</div>
 				
 					<img src="<?= $data->sprite ?>" alt="<?= ucfirst(join(' ', explode('-', $data->name))); ?> sprite" class="pokeImage">
-					<div class="types"></div>
 				</div>
 			</div>
 			
-			<div class="bottom-container">
+			<div class="bottomContainer">
 				<table>
 					<tr>
 						<th>Base</th>

@@ -16,7 +16,7 @@
 	<?php 
 		$data = queryPokeAPI('pokemon?limit=-1')->results;
 	?>
-	<div class="container"> <!-- TODO: Change to Flex + Center vertically to the page -->
+	<div class="container">
 		<div class="titleBar">
 			<label for="pokemon">PokeSearch</label>
 		</div>
